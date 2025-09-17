@@ -42,6 +42,96 @@ The dataset contains three files:
 
 ⚠️ You need to unzip the dataset before running:
 
-```bash
-!unzip "/content/Machine Learning-20250914T055612Z-1-001.zip"
 
+
+## 🛠️ Installation
+
+- Install dependencies (if not already installed):
+- pip install numpy pandas matplotlib seaborn scikit-learn nltk gensim tensorflow joblib
+
+
+## Download NLTK resources:
+
+- import nltk
+- nltk.download('punkt')
+
+## 📊 Workflow
+- 1. Data Cleaning
+
+Fill missing authors, publishers, and image URLs.
+
+Remove duplicates.
+
+2. Exploratory Data Analysis (EDA)
+
+Top years, publishers, authors, most rated books, and most active users.
+
+3. Collaborative Filtering
+
+Filter active users (>200 ratings)
+
+Filter popular books (≥50 ratings)
+
+Create book–user pivot matrix
+
+Apply:
+
+Cosine similarity
+
+KNN (Nearest Neighbors)
+
+Clustering (KMeans, Gaussian Mixture)
+
+4. Content-Based Filtering
+
+Combine Title + Author + Publisher into single text
+
+Preprocess text (lowercase, remove special chars, tokenize)
+
+Train Word2Vec to create embeddings
+
+Compute cosine similarity between book vectors
+
+## 🔎 Example Usage
+Collaborative Filtering
+recommend("1984")
+Returns similar books to 1984.
+
+recommend_nn("River's End")
+
+
+Returns recommendations using Nearest Neighbors.
+
+Content-Based Filtering
+recommend_books("Echoes", k=5)
+
+
+Returns 5 similar books to Echoes based on content similarity.
+
+## 📌 Key Insights
+
+2002 had the most books published.
+
+Harlequin was the top publisher.
+
+Over 50% of ratings are zero, so filtering active users is important.
+
+William Shakespeare has the most books in the dataset.
+
+Wild Animus is the most rated book.
+
+User with ID 11676 gave the most ratings (11,144).
+
+## 🧑‍💻 Tech Stack
+
+Python 3
+
+Pandas, Numpy → Data processing
+
+Matplotlib, Seaborn → Visualization
+
+Scikit-Learn → ML models & similarity
+
+NLTK, Gensim → Text processing, Word2Vec
+
+TensorFlow / Keras → DL support
