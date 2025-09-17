@@ -1,58 +1,47 @@
 # Book-Recommender-System
 
-📚 Book Recommendation System
+# 📚 Book Recommendation System
 
-A Book Recommendation System using Collaborative Filtering and Content-Based Filtering. Built with Python, Pandas, Scikit-Learn, NLTK, and Gensim.
+This project builds a **Book Recommendation System** using both **Collaborative Filtering** and **Content-Based Filtering** approaches.  
+It uses the popular **Books, Ratings, and Users dataset** from Kaggle.
 
-Features
+---
 
-Collaborative Filtering with cosine similarity and Nearest Neighbors
+## 🚀 Features
 
-Content-Based Filtering using Word2Vec embeddings
+- **Data Cleaning & Preprocessing**:  
+  Handle missing values, duplicates, and inconsistent data.
 
-Exploratory Data Analysis: top authors, books, publishers, and active users
+- **Exploratory Data Analysis (EDA)**:  
+  - Top years with most publications  
+  - Most active publishers  
+  - Distribution of ratings  
+  - Most active users  
+  - Most rated books and top authors
 
-Filtering for experienced users and popular books
+- **Collaborative Filtering**:  
+  - User–Book rating matrix  
+  - Cosine similarity between books  
+  - Nearest Neighbors model  
+  - Clustering with KMeans and Gaussian Mixture
 
-Dataset
+- **Content-Based Filtering**:  
+  - Text preprocessing of book title, author, and publisher  
+  - Word2Vec embeddings for semantic similarity  
+  - Cosine similarity to recommend books based on content
 
-Books.csv → book details
+---
 
-Ratings.csv → user ratings
+## 📂 Dataset
 
-Users.csv → user demographics
+The dataset contains three files:
 
-Extract the dataset before running:
+- **Books.csv** → Information about books (Title, Author, Publisher, Year, Images)  
+- **Ratings.csv** → User ratings for books  
+- **Users.csv** → User demographic details
 
-!unzip "Machine Learning-20250914T055612Z-1-001.zip"
+⚠️ You need to unzip the dataset before running:
 
-Installation
-pip install numpy pandas matplotlib seaborn scikit-learn nltk gensim tensorflow joblib
+```bash
+!unzip "/content/Machine Learning-20250914T055612Z-1-001.zip"
 
-
-NLTK downloads:
-
-import nltk
-nltk.download('punkt')
-
-Usage
-Collaborative Filtering
-recommend("1984")          # top similar books
-recommend_nn("River's End") # KNN-based recommendation
-
-Content-Based Filtering
-recommend_books("Echoes", k=5)  # content similarity-based recommendation
-
-Insights
-
-Most books published: 2002
-
-Top publisher: Harlequin
-
-Most active user: ID 11676
-
-Most rated book: Wild Animus
-
-Tech Stack
-
-Python, Pandas, Numpy, Scikit-Learn, NLTK, Gensim, TensorFlow, Matplotlib, Seaborn
